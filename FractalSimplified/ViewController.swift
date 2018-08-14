@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  FractalSimplified
-//
-//  Created by Sergey Slavinskiy on 14.08.2018.
-//  Copyright © 2018 Sergey Slavinskiy. All rights reserved.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
