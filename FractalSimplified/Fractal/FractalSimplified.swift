@@ -31,7 +31,6 @@ extension Presenter {
         let serialDisposable = SerialDisposable()
         
         let subscribeDisposable = observable.subscribe(onNext: { (viewModel) in
-            serialDisposable.dispose()
             serialDisposable.disposable = self.present(viewModel)
         })
         

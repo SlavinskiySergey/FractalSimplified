@@ -80,10 +80,10 @@ extension UIViewController {
             case let .some(presentable):
                 let vc = SignUpViewController.create()
                 let signUpDisposable = vc.presenter.present(presentable)
-//                let dismissDisposable = Disposables
-//                    .create(with: { someSelf.dismiss(animated: true, completion: nil) })
+                let dismissDisposable = Disposables
+                    .create(with: { someSelf.dismiss(animated: true, completion: nil) })
                 someSelf.present(vc, animated: true, completion: nil)
-                return CompositeDisposable(disposables: [signUpDisposable]/*, dismissDisposable*/)
+                return CompositeDisposable(signUpDisposable, dismissDisposable)
             case .none:
                 return Disposables.create()
             }
