@@ -1,5 +1,6 @@
 import Foundation
 import RxSwift
+import RxCocoa
 
 protocol Presentable: class {
     associatedtype Presenters
@@ -22,7 +23,6 @@ extension Presenter {
     static func UI(bind: @escaping (ViewModel) -> Disposable) -> Presenter {
         return Presenter { viewModel -> Disposable in
             return MainScheduler.instance.schedule(viewModel, action: bind)
-            
         }
     }
     
@@ -38,9 +38,9 @@ extension Presenter {
         return CompositeDisposable(serialDisposable, subscribeDisposable)
     }
     
-    /// Present Variable of ViewModel
-    func present(_ variable: Variable<ViewModel>) -> Disposable {
-        return present(variable.asObservable())
+    /// Present BehaviorRelay of ViewModel
+    func present(_ behaviorRelay: BehaviorRelay<ViewModel>) -> Disposable {
+        return present(behaviorRelay)
     }
     
     /// Present any Presentable with same Presenters

@@ -7,10 +7,10 @@ final class ActionViewModel {
     init(action: Action<Void, Void>) {
         self.action = action
         
-        executionIntents.asObservable()
-            .flatMapLatest { action.enabled }
-            .filter { $0 }
-            .flatMapLatest { _ in action.execute(()) }
+        executionIntents
+            .flatMapLatest { _ in
+                action.execute(())
+            }
             .subscribe()
             .disposed(by: disposeBag)
         
@@ -27,10 +27,6 @@ final class ActionViewModel {
     private let executionIntents = PublishSubject<Void>()
     private let disposeBag = DisposeBag()
     
-    deinit {
-        self.executionIntents.on(.completed)
-    }
-    
 }
 
 extension ActionViewModel: Presentable {
@@ -42,8 +38,8 @@ extension ActionViewModel: Presentable {
             }
             
             let actionDisposable = presenters.simpleAction.present(someSelf.simpleAction)
-            let executingDisposable = presenters.executing.present(someSelf.executing.asObservable())
-            let enabledDisposable = presenters.enabled.present(someSelf.enabled.asObservable())
+            let executingDisposable = presenters.executing.present(someSelf.executing)
+            let enabledDisposable = presenters.enabled.present(someSelf.enabled)
             
             return CompositeDisposable(actionDisposable, executingDisposable, enabledDisposable)
         }

@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		40287F4D78426A5354F31308 /* Pods_FractalSimplified.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A72360379FF35ACE21B05A5E /* Pods_FractalSimplified.framework */; };
 		87C548AF2122B83100965FD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C548AE2122B83100965FD2 /* AppDelegate.swift */; };
-		87C548B12122B83100965FD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C548B02122B83100965FD2 /* ViewController.swift */; };
-		87C548B42122B83100965FD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87C548B22122B83100965FD2 /* Main.storyboard */; };
 		87C548B62122B83200965FD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87C548B52122B83200965FD2 /* Assets.xcassets */; };
 		87C548B92122B83200965FD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87C548B72122B83200965FD2 /* LaunchScreen.storyboard */; };
 		87C548C42122B83200965FD2 /* FractalSimplifiedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C548C32122B83200965FD2 /* FractalSimplifiedTests.swift */; };
@@ -22,6 +20,10 @@
 		87C548EC2122CA8D00965FD2 /* ActionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C548EB2122CA8D00965FD2 /* ActionViewModel.swift */; };
 		87C548EF2122CA9E00965FD2 /* EmailFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C548ED2122CA9E00965FD2 /* EmailFieldView.swift */; };
 		87C548F02122CA9E00965FD2 /* EmailFieldUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C548EE2122CA9E00965FD2 /* EmailFieldUseCase.swift */; };
+		87C548F62122D20B00965FD2 /* SignUpScreenUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C548F52122D20B00965FD2 /* SignUpScreenUseCase.swift */; };
+		87C548F82122D22D00965FD2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C548F72122D22D00965FD2 /* SignUpViewController.swift */; };
+		87C548FD2122FF7D00965FD2 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C548FC2122FF7D00965FD2 /* WelcomeViewController.swift */; };
+		87C548FF21230E0E00965FD2 /* WelcomeScreenUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C548FE21230E0D00965FD2 /* WelcomeScreenUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,8 +47,6 @@
 		3AC80AD31E8738038EF245F6 /* Pods-FractalSimplified.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FractalSimplified.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FractalSimplified/Pods-FractalSimplified.debug.xcconfig"; sourceTree = "<group>"; };
 		87C548AB2122B83100965FD2 /* FractalSimplified.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FractalSimplified.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C548AE2122B83100965FD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		87C548B02122B83100965FD2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		87C548B32122B83100965FD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		87C548B52122B83200965FD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87C548B82122B83200965FD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87C548BA2122B83200965FD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -63,6 +63,10 @@
 		87C548EB2122CA8D00965FD2 /* ActionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionViewModel.swift; sourceTree = "<group>"; };
 		87C548ED2122CA9E00965FD2 /* EmailFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailFieldView.swift; sourceTree = "<group>"; };
 		87C548EE2122CA9E00965FD2 /* EmailFieldUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailFieldUseCase.swift; sourceTree = "<group>"; };
+		87C548F52122D20B00965FD2 /* SignUpScreenUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenUseCase.swift; sourceTree = "<group>"; };
+		87C548F72122D22D00965FD2 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		87C548FC2122FF7D00965FD2 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		87C548FE21230E0D00965FD2 /* WelcomeScreenUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeScreenUseCase.swift; sourceTree = "<group>"; };
 		8969F6FA57CEC04925325165 /* Pods-FractalSimplified.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FractalSimplified.release.xcconfig"; path = "Pods/Target Support Files/Pods-FractalSimplified/Pods-FractalSimplified.release.xcconfig"; sourceTree = "<group>"; };
 		A72360379FF35ACE21B05A5E /* Pods_FractalSimplified.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FractalSimplified.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -121,8 +125,6 @@
 				87C548DC2122C9CA00965FD2 /* Fractal */,
 				87C548F12122CB0400965FD2 /* UseCases */,
 				87C548AE2122B83100965FD2 /* AppDelegate.swift */,
-				87C548B02122B83100965FD2 /* ViewController.swift */,
-				87C548B22122B83100965FD2 /* Main.storyboard */,
 				87C548B52122B83200965FD2 /* Assets.xcassets */,
 				87C548B72122B83200965FD2 /* LaunchScreen.storyboard */,
 				87C548BA2122B83200965FD2 /* Info.plist */,
@@ -189,8 +191,28 @@
 			children = (
 				87C548E92122CA6600965FD2 /* ActionViewModel */,
 				87C548EA2122CA7100965FD2 /* EmailField */,
+				87C548F42122D1C300965FD2 /* SignUp */,
+				87C548F92122FF2700965FD2 /* Welcome */,
 			);
 			path = UseCases;
+			sourceTree = "<group>";
+		};
+		87C548F42122D1C300965FD2 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				87C548F52122D20B00965FD2 /* SignUpScreenUseCase.swift */,
+				87C548F72122D22D00965FD2 /* SignUpViewController.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		87C548F92122FF2700965FD2 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				87C548FE21230E0D00965FD2 /* WelcomeScreenUseCase.swift */,
+				87C548FC2122FF7D00965FD2 /* WelcomeViewController.swift */,
+			);
+			path = Welcome;
 			sourceTree = "<group>";
 		};
 		F5284477D8F2FDD1D488E961 /* Pods */ = {
@@ -318,7 +340,6 @@
 			files = (
 				87C548B92122B83200965FD2 /* LaunchScreen.storyboard in Resources */,
 				87C548B62122B83200965FD2 /* Assets.xcassets in Resources */,
-				87C548B42122B83100965FD2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,10 +407,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87C548F82122D22D00965FD2 /* SignUpViewController.swift in Sources */,
 				87C548E42122CA1900965FD2 /* UILabel.swift in Sources */,
 				87C548E72122CA3900965FD2 /* FractalSimplified.swift in Sources */,
 				87C548F02122CA9E00965FD2 /* EmailFieldUseCase.swift in Sources */,
-				87C548B12122B83100965FD2 /* ViewController.swift in Sources */,
+				87C548F62122D20B00965FD2 /* SignUpScreenUseCase.swift in Sources */,
+				87C548FD2122FF7D00965FD2 /* WelcomeViewController.swift in Sources */,
+				87C548FF21230E0E00965FD2 /* WelcomeScreenUseCase.swift in Sources */,
 				87C548AF2122B83100965FD2 /* AppDelegate.swift in Sources */,
 				87C548EC2122CA8D00965FD2 /* ActionViewModel.swift in Sources */,
 				87C548E32122CA1900965FD2 /* UIButton.swift in Sources */,
@@ -430,14 +454,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		87C548B22122B83100965FD2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				87C548B32122B83100965FD2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		87C548B72122B83200965FD2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -570,7 +586,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FractalSimplified/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -589,7 +605,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FractalSimplified/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
