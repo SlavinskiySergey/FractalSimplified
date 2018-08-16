@@ -2,26 +2,34 @@ PODS:
   - Action (3.6.0):
     - RxCocoa (~> 4.2.0)
     - RxSwift (~> 4.2.0)
+  - Nimble (7.1.3)
+  - Quick (1.3.1)
   - RxCocoa (4.2.0):
     - RxSwift (~> 4.0)
   - RxSwift (4.2.0)
 
 DEPENDENCIES:
   - Action (~> 3.6)
+  - Nimble
+  - Quick
   - RxCocoa (~> 4.0)
   - RxSwift (~> 4.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Action
+    - Nimble
+    - Quick
     - RxCocoa
     - RxSwift
 
 SPEC CHECKSUMS:
   Action: 3d9486d3da02b572b0a034b6c49ac4c3fbcc8b63
+  Nimble: 2839b01d1b31f6a6a7777a221f0d91cf52e8e27b
+  Quick: d17304d58d0d169dd0bd1c6e5c28e3318de32a1a
   RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
   RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
 
-PODFILE CHECKSUM: 4fd165849941dffbb7d80d9f23cd87da6a3f26f6
+PODFILE CHECKSUM: b2d4ec87a1d30e401509bbb6bbd34d12fdd42bdb
 
 COCOAPODS: 1.5.3

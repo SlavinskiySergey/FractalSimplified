@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		40287F4D78426A5354F31308 /* Pods_FractalSimplified.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A72360379FF35ACE21B05A5E /* Pods_FractalSimplified.framework */; };
+		8726D26821257502003FF2D5 /* ActionViewModel+TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8726D26721257502003FF2D5 /* ActionViewModel+TestView.swift */; };
 		87C548AF2122B83100965FD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C548AE2122B83100965FD2 /* AppDelegate.swift */; };
 		87C548B62122B83200965FD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87C548B52122B83200965FD2 /* Assets.xcassets */; };
 		87C548B92122B83200965FD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87C548B72122B83200965FD2 /* LaunchScreen.storyboard */; };
@@ -24,6 +25,12 @@
 		87C548F82122D22D00965FD2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C548F72122D22D00965FD2 /* SignUpViewController.swift */; };
 		87C548FD2122FF7D00965FD2 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C548FC2122FF7D00965FD2 /* WelcomeViewController.swift */; };
 		87C548FF21230E0E00965FD2 /* WelcomeScreenUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C548FE21230E0D00965FD2 /* WelcomeScreenUseCase.swift */; };
+		87C71C6D2124627A00C5FEBF /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C71C6C2124627A00C5FEBF /* TestView.swift */; };
+		87C71C6F2124628E00C5FEBF /* PresentedValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C71C6E2124628E00C5FEBF /* PresentedValue.swift */; };
+		87C71C72212468B100C5FEBF /* Observable+TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C71C71212468B100C5FEBF /* Observable+TestUtils.swift */; };
+		87C71C74212468C300C5FEBF /* ActionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C71C73212468C300C5FEBF /* ActionMock.swift */; };
+		87C71C782124881F00C5FEBF /* ActionViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C71C772124881F00C5FEBF /* ActionViewModelSpec.swift */; };
+		E1036C79ECE88392BB448581 /* Pods_FractalSimplifiedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A31D3BA55BB059B657B5324C /* Pods_FractalSimplifiedTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +51,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		039B4338A87EE6216D5D725A /* Pods-FractalSimplifiedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FractalSimplifiedTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FractalSimplifiedTests/Pods-FractalSimplifiedTests.release.xcconfig"; sourceTree = "<group>"; };
 		3AC80AD31E8738038EF245F6 /* Pods-FractalSimplified.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FractalSimplified.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FractalSimplified/Pods-FractalSimplified.debug.xcconfig"; sourceTree = "<group>"; };
+		5DA59734A00CDAE6E6CD23DC /* Pods-FractalSimplifiedTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FractalSimplifiedTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FractalSimplifiedTests/Pods-FractalSimplifiedTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8726D26721257502003FF2D5 /* ActionViewModel+TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActionViewModel+TestView.swift"; sourceTree = "<group>"; };
 		87C548AB2122B83100965FD2 /* FractalSimplified.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FractalSimplified.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C548AE2122B83100965FD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87C548B52122B83200965FD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,7 +77,13 @@
 		87C548F72122D22D00965FD2 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		87C548FC2122FF7D00965FD2 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		87C548FE21230E0D00965FD2 /* WelcomeScreenUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeScreenUseCase.swift; sourceTree = "<group>"; };
+		87C71C6C2124627A00C5FEBF /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		87C71C6E2124628E00C5FEBF /* PresentedValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentedValue.swift; sourceTree = "<group>"; };
+		87C71C71212468B100C5FEBF /* Observable+TestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+TestUtils.swift"; sourceTree = "<group>"; };
+		87C71C73212468C300C5FEBF /* ActionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionMock.swift; sourceTree = "<group>"; };
+		87C71C772124881F00C5FEBF /* ActionViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewModelSpec.swift; sourceTree = "<group>"; };
 		8969F6FA57CEC04925325165 /* Pods-FractalSimplified.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FractalSimplified.release.xcconfig"; path = "Pods/Target Support Files/Pods-FractalSimplified/Pods-FractalSimplified.release.xcconfig"; sourceTree = "<group>"; };
+		A31D3BA55BB059B657B5324C /* Pods_FractalSimplifiedTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FractalSimplifiedTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A72360379FF35ACE21B05A5E /* Pods_FractalSimplified.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FractalSimplified.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -84,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1036C79ECE88392BB448581 /* Pods_FractalSimplifiedTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +114,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8726D266212574C6003FF2D5 /* TestUtils */ = {
+			isa = PBXGroup;
+			children = (
+				8726D26721257502003FF2D5 /* ActionViewModel+TestView.swift */,
+			);
+			path = TestUtils;
+			sourceTree = "<group>";
+		};
 		87C548A22122B83100965FD2 = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +147,7 @@
 		87C548AD2122B83100965FD2 /* FractalSimplified */ = {
 			isa = PBXGroup;
 			children = (
+				87C71C6A2124623B00C5FEBF /* TestUtils */,
 				87C548DC2122C9CA00965FD2 /* Fractal */,
 				87C548F12122CB0400965FD2 /* UseCases */,
 				87C548AE2122B83100965FD2 /* AppDelegate.swift */,
@@ -135,6 +161,8 @@
 		87C548C22122B83200965FD2 /* FractalSimplifiedTests */ = {
 			isa = PBXGroup;
 			children = (
+				87C71C75212487E600C5FEBF /* UseCases */,
+				8726D266212574C6003FF2D5 /* TestUtils */,
 				87C548C32122B83200965FD2 /* FractalSimplifiedTests.swift */,
 				87C548C52122B83200965FD2 /* Info.plist */,
 			);
@@ -215,11 +243,56 @@
 			path = Welcome;
 			sourceTree = "<group>";
 		};
+		87C71C6A2124623B00C5FEBF /* TestUtils */ = {
+			isa = PBXGroup;
+			children = (
+				87C71C6B2124625100C5FEBF /* FractalTestUtils */,
+				87C71C702124688600C5FEBF /* RxSwiftTestUtils */,
+			);
+			path = TestUtils;
+			sourceTree = "<group>";
+		};
+		87C71C6B2124625100C5FEBF /* FractalTestUtils */ = {
+			isa = PBXGroup;
+			children = (
+				87C71C6C2124627A00C5FEBF /* TestView.swift */,
+				87C71C6E2124628E00C5FEBF /* PresentedValue.swift */,
+			);
+			path = FractalTestUtils;
+			sourceTree = "<group>";
+		};
+		87C71C702124688600C5FEBF /* RxSwiftTestUtils */ = {
+			isa = PBXGroup;
+			children = (
+				87C71C71212468B100C5FEBF /* Observable+TestUtils.swift */,
+				87C71C73212468C300C5FEBF /* ActionMock.swift */,
+			);
+			path = RxSwiftTestUtils;
+			sourceTree = "<group>";
+		};
+		87C71C75212487E600C5FEBF /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				87C71C76212487FA00C5FEBF /* ActionViewModel */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		87C71C76212487FA00C5FEBF /* ActionViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				87C71C772124881F00C5FEBF /* ActionViewModelSpec.swift */,
+			);
+			path = ActionViewModel;
+			sourceTree = "<group>";
+		};
 		F5284477D8F2FDD1D488E961 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				3AC80AD31E8738038EF245F6 /* Pods-FractalSimplified.debug.xcconfig */,
 				8969F6FA57CEC04925325165 /* Pods-FractalSimplified.release.xcconfig */,
+				5DA59734A00CDAE6E6CD23DC /* Pods-FractalSimplifiedTests.debug.xcconfig */,
+				039B4338A87EE6216D5D725A /* Pods-FractalSimplifiedTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -228,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				A72360379FF35ACE21B05A5E /* Pods_FractalSimplified.framework */,
+				A31D3BA55BB059B657B5324C /* Pods_FractalSimplifiedTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -258,9 +332,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 87C548D62122B83200965FD2 /* Build configuration list for PBXNativeTarget "FractalSimplifiedTests" */;
 			buildPhases = (
+				7FBDB124024022AB81F61E7E /* [CP] Check Pods Manifest.lock */,
 				87C548BB2122B83200965FD2 /* Sources */,
 				87C548BC2122B83200965FD2 /* Frameworks */,
 				87C548BD2122B83200965FD2 /* Resources */,
+				C03AC17C7E9BCA43FF2214F8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -382,6 +458,24 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FractalSimplified/Pods-FractalSimplified-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		7FBDB124024022AB81F61E7E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FractalSimplifiedTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		98E5B09BCD9FB5A71C49B268 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -400,6 +494,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C03AC17C7E9BCA43FF2214F8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FractalSimplifiedTests/Pods-FractalSimplifiedTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FractalSimplifiedTests/Pods-FractalSimplifiedTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -410,6 +524,7 @@
 				87C548F82122D22D00965FD2 /* SignUpViewController.swift in Sources */,
 				87C548E42122CA1900965FD2 /* UILabel.swift in Sources */,
 				87C548E72122CA3900965FD2 /* FractalSimplified.swift in Sources */,
+				87C71C74212468C300C5FEBF /* ActionMock.swift in Sources */,
 				87C548F02122CA9E00965FD2 /* EmailFieldUseCase.swift in Sources */,
 				87C548F62122D20B00965FD2 /* SignUpScreenUseCase.swift in Sources */,
 				87C548FD2122FF7D00965FD2 /* WelcomeViewController.swift in Sources */,
@@ -417,7 +532,10 @@
 				87C548AF2122B83100965FD2 /* AppDelegate.swift in Sources */,
 				87C548EC2122CA8D00965FD2 /* ActionViewModel.swift in Sources */,
 				87C548E32122CA1900965FD2 /* UIButton.swift in Sources */,
+				87C71C6F2124628E00C5FEBF /* PresentedValue.swift in Sources */,
 				87C548EF2122CA9E00965FD2 /* EmailFieldView.swift in Sources */,
+				87C71C72212468B100C5FEBF /* Observable+TestUtils.swift in Sources */,
+				87C71C6D2124627A00C5FEBF /* TestView.swift in Sources */,
 				87C548E52122CA1900965FD2 /* UITextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,6 +545,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				87C548C42122B83200965FD2 /* FractalSimplifiedTests.swift in Sources */,
+				8726D26821257502003FF2D5 /* ActionViewModel+TestView.swift in Sources */,
+				87C71C782124881F00C5FEBF /* ActionViewModelSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -619,8 +739,8 @@
 		};
 		87C548D72122B83200965FD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DA59734A00CDAE6E6CD23DC /* Pods-FractalSimplifiedTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FractalSimplifiedTests/Info.plist;
@@ -639,8 +759,8 @@
 		};
 		87C548D82122B83200965FD2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 039B4338A87EE6216D5D725A /* Pods-FractalSimplifiedTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FractalSimplifiedTests/Info.plist;

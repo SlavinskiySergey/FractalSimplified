@@ -20,11 +20,24 @@ struct Presenter<ViewModel> {
 }
 
 extension Presenter {
+    
     static func UI(bind: @escaping (ViewModel) -> Disposable) -> Presenter {
         return Presenter { viewModel -> Disposable in
             return MainScheduler.instance.schedule(viewModel, action: bind)
         }
     }
+    
+    static func Test(bind: @escaping (ViewModel) -> Disposable) -> Presenter {
+        if NSClassFromString("XCTestCase") == nil {
+            assertionFailure()
+            return Presenter { _ in Disposables.create() }
+        }
+        return Presenter(bind)
+    }
+    
+}
+
+extension Presenter {
     
     /// Present Observable of ViewModel
     func present(_ observable: Observable<ViewModel>) -> Disposable {
