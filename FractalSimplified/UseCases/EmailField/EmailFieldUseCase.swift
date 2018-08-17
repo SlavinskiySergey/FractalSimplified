@@ -1,6 +1,5 @@
 import Foundation
 import RxSwift
-import RxCocoa
 
 final class EmailFieldUseCase {
     
@@ -9,10 +8,10 @@ final class EmailFieldUseCase {
         case invalid(String?)
     }
     
-    let result = BehaviorRelay<Result>(value: .invalid(nil))
+    let result = BehaviorSubject<Result>(value: .invalid(nil))
     
     init() {
-        self.placeholder = "email"
+        self.placeholder = "Email"
         self.emailSink = emailSubject.onNext
         
         self.emailSubject
@@ -29,7 +28,7 @@ final class EmailFieldUseCase {
     private let placeholder: String
     private let emailSink: (String?) -> Void
     
-    private let email = BehaviorRelay<String?>(value: nil)
+    private let email = BehaviorSubject<String?>(value: nil)
     private let emailSubject = PublishSubject<String?>()
     
     private let disposeBag = DisposeBag()

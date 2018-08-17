@@ -1,6 +1,5 @@
 import Foundation
 import RxSwift
-import RxCocoa
 import Action
 
 final class WelcomeScreenUseCase {
@@ -28,7 +27,7 @@ final class WelcomeScreenUseCase {
     private let title: String
     private let signUpTitle: String
     private let signUpAction: ActionViewModel
-    private let signUpUseCase = BehaviorRelay<SignUpScreenUseCase?>(value: nil)
+    private let signUpUseCase = BehaviorSubject<SignUpScreenUseCase?>(value: nil)
     
     private let disposeBag = DisposeBag()
 }

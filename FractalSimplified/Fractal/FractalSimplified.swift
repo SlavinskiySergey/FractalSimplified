@@ -1,6 +1,5 @@
 import Foundation
 import RxSwift
-import RxCocoa
 
 protocol Presentable: class {
     associatedtype Presenters
@@ -50,8 +49,8 @@ extension Presenter {
         return CompositeDisposable(serialDisposable, subscribeDisposable)
     }
     
-    /// Present BehaviorRelay of ViewModel
-    func present(_ behaviorRelay: BehaviorRelay<ViewModel>) -> Disposable {
+    /// Present BehaviorSubject of ViewModel
+    func present(_ behaviorRelay: BehaviorSubject<ViewModel>) -> Disposable {
         return present(behaviorRelay)
     }
     

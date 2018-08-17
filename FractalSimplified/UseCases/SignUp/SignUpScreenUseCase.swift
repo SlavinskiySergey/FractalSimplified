@@ -1,6 +1,5 @@
 import Foundation
 import RxSwift
-import RxCocoa
 import Action
 
 final class SignUpScreenUseCase {
@@ -40,7 +39,7 @@ final class SignUpScreenUseCase {
                 }
                 return Credentials(email: email, password: password)
         }
-        let credentialsVariable = BehaviorRelay<Credentials?>(value: nil)
+        let credentialsVariable = BehaviorSubject<Credentials?>(value: nil)
         credentials
             .bind(to: credentialsVariable)
             .disposed(by: disposeBag)
@@ -48,7 +47,7 @@ final class SignUpScreenUseCase {
         let signUpAction = Action<Void, Void>(
             enabledIf: credentials.map { $0 != nil },
             workFactory: { _ -> Observable<Void> in
-                switch credentialsVariable.value {
+                switch (try? credentialsVariable.value())?.flatMap({$0}) {
                 case .some(let creds): return makeSignUpTask(credentials: creds)
                 case .none: return Observable.empty()
                 }
