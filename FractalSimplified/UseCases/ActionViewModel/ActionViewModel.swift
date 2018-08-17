@@ -9,7 +9,15 @@ final class ActionViewModel {
         
         executionIntents
             .flatMapLatest { _ in
+                return action.executing.take(1)
+            }
+            .filter { !$0 }
+            .flatMapLatest { _ in
                 action.execute(())
+            }
+            .catchError { _ -> Observable<()> in
+                assertionFailure()
+                return .empty()
             }
             .subscribe()
             .disposed(by: disposeBag)
