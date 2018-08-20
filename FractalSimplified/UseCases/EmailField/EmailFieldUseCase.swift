@@ -52,6 +52,20 @@ extension EmailFieldUseCase: Presentable {
     
 }
 
+extension EmailFieldUseCase.Result: Equatable {
+    static func ==(lhs: EmailFieldUseCase.Result, rhs: EmailFieldUseCase.Result) -> Bool {
+        switch (lhs, rhs) {
+        case let (.valid(l), .valid(r)):
+            return l == r
+        case let (.invalid(l), .invalid(r)):
+            return l == r
+        case (.valid, _),
+             (.invalid, _):
+            return false
+        }
+    }
+}
+
 private func makeResult(email: String?) -> EmailFieldUseCase.Result {
     return email.map { $0.isValidEmail ? .valid($0) : .invalid($0) } ?? .invalid(email)
 }

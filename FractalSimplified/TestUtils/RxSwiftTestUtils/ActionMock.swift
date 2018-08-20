@@ -1,6 +1,5 @@
 import Foundation
 import RxSwift
-import RxCocoa
 import Action
 
 final class ActionMock<Input, Element> {
@@ -8,16 +7,13 @@ final class ActionMock<Input, Element> {
     typealias RxTask = Observable<Element>
     typealias RxAction = Action<Input, Element>
     
-    let inputs = BehaviorRelay<[Input]>(value: [])
+    let inputs = Variable<[Input]>([])
     let pipeInput = PublishSubject<Event<Element>>()
     let action: RxAction
     
     public init() {
         self.action = RxAction(workFactory: { [inputs, pipeInput] (input) -> Observable<Element> in
-            var value = inputs.value
-            value.append(input)
-            inputs.accept(value)
-    
+            inputs.value.append(input)
             return pipeInput.dematerialize()
         })
     }

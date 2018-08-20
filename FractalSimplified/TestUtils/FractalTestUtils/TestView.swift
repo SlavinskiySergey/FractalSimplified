@@ -4,7 +4,7 @@ import RxSwift
 protocol TestViewType {
     associatedtype ViewModel
     init(_ viewModel: ViewModel)
-    var disposeBag: DisposeBag? { get }
+    var disposable: Disposable? { get }
 }
 
 final class TestPresenter<TestView: TestViewType> {
@@ -16,8 +16,8 @@ final class TestPresenter<TestView: TestViewType> {
             let view = TestView(presentable)
             let presentedValue = PresentedValue(value: view)
             
-            if let disposeBag = presentedValue.value.disposeBag {
-                presentedValue.disposable.disposed(by: disposeBag)
+            if let disposable = presentedValue.value.disposable {
+                _ = presentedValue.disposable.insert(disposable)
             }
             
             self!.presented.append(presentedValue)
@@ -38,8 +38,8 @@ final class OptionalTestView<WrappedTestView: TestViewType>: TestViewType {
     
     let view: WrappedTestView?
     
-    var disposeBag: DisposeBag? {
-        return self.view?.disposeBag
+    var disposable: Disposable? {
+        return self.view?.disposable
     }
     
     init(_ viewModel: WrappedTestView.ViewModel?) {
@@ -54,7 +54,7 @@ extension TestViewType {
 final class AnyTestView<Value>: TestViewType {
     
     let value: Value
-    var disposeBag: DisposeBag? { return nil }
+    var disposable: Disposable? { return nil }
     
     init(_ viewModel: Value) {
         self.value = viewModel
