@@ -34,6 +34,8 @@
 		87E714F52127164D00A4FB99 /* EmailFieldUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E714F42127164D00A4FB99 /* EmailFieldUseCaseSpec.swift */; };
 		87E714F7212718BA00A4FB99 /* SignUpScreenUseCase+TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E714F6212718BA00A4FB99 /* SignUpScreenUseCase+TestView.swift */; };
 		87E714FA212719AB00A4FB99 /* SignUpScreenUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E714F9212719AB00A4FB99 /* SignUpScreenUseCaseSpec.swift */; };
+		87E7ED9B212ABA1300C5B3C9 /* WelcomeScreenUseCase+TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E7ED9A212ABA1300C5B3C9 /* WelcomeScreenUseCase+TestView.swift */; };
+		87E7ED9E212ABA9F00C5B3C9 /* WelcomeScreenUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E7ED9D212ABA9F00C5B3C9 /* WelcomeScreenUseCaseSpec.swift */; };
 		E1036C79ECE88392BB448581 /* Pods_FractalSimplifiedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A31D3BA55BB059B657B5324C /* Pods_FractalSimplifiedTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +92,8 @@
 		87E714F42127164D00A4FB99 /* EmailFieldUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailFieldUseCaseSpec.swift; sourceTree = "<group>"; };
 		87E714F6212718BA00A4FB99 /* SignUpScreenUseCase+TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpScreenUseCase+TestView.swift"; sourceTree = "<group>"; };
 		87E714F9212719AB00A4FB99 /* SignUpScreenUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenUseCaseSpec.swift; sourceTree = "<group>"; };
+		87E7ED9A212ABA1300C5B3C9 /* WelcomeScreenUseCase+TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WelcomeScreenUseCase+TestView.swift"; sourceTree = "<group>"; };
+		87E7ED9D212ABA9F00C5B3C9 /* WelcomeScreenUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenUseCaseSpec.swift; sourceTree = "<group>"; };
 		8969F6FA57CEC04925325165 /* Pods-FractalSimplified.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FractalSimplified.release.xcconfig"; path = "Pods/Target Support Files/Pods-FractalSimplified/Pods-FractalSimplified.release.xcconfig"; sourceTree = "<group>"; };
 		A31D3BA55BB059B657B5324C /* Pods_FractalSimplifiedTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FractalSimplifiedTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A72360379FF35ACE21B05A5E /* Pods_FractalSimplified.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FractalSimplified.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +132,7 @@
 				8726D26721257502003FF2D5 /* ActionViewModel+TestView.swift */,
 				87E714F12127149F00A4FB99 /* EmailFieldUseCase+TestView.swift */,
 				87E714F6212718BA00A4FB99 /* SignUpScreenUseCase+TestView.swift */,
+				87E7ED9A212ABA1300C5B3C9 /* WelcomeScreenUseCase+TestView.swift */,
 			);
 			path = TestUtils;
 			sourceTree = "<group>";
@@ -286,6 +291,7 @@
 				87C71C76212487FA00C5FEBF /* ActionViewModel */,
 				87E714F32127160A00A4FB99 /* EmailField */,
 				87E714F82127197900A4FB99 /* SignUpScreen */,
+				87E7ED9C212ABA7200C5B3C9 /* WelcomeScreen */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -312,6 +318,14 @@
 				87E714F9212719AB00A4FB99 /* SignUpScreenUseCaseSpec.swift */,
 			);
 			path = SignUpScreen;
+			sourceTree = "<group>";
+		};
+		87E7ED9C212ABA7200C5B3C9 /* WelcomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				87E7ED9D212ABA9F00C5B3C9 /* WelcomeScreenUseCaseSpec.swift */,
+			);
+			path = WelcomeScreen;
 			sourceTree = "<group>";
 		};
 		F5284477D8F2FDD1D488E961 /* Pods */ = {
@@ -573,7 +587,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				87E714FA212719AB00A4FB99 /* SignUpScreenUseCaseSpec.swift in Sources */,
+				87E7ED9B212ABA1300C5B3C9 /* WelcomeScreenUseCase+TestView.swift in Sources */,
 				87C548C42122B83200965FD2 /* FractalSimplifiedTests.swift in Sources */,
+				87E7ED9E212ABA9F00C5B3C9 /* WelcomeScreenUseCaseSpec.swift in Sources */,
 				8726D26821257502003FF2D5 /* ActionViewModel+TestView.swift in Sources */,
 				87E714F22127149F00A4FB99 /* EmailFieldUseCase+TestView.swift in Sources */,
 				87E714F52127164D00A4FB99 /* EmailFieldUseCaseSpec.swift in Sources */,

@@ -1,36 +1,30 @@
-//
-//  FractalSimplifiedTests.swift
-//  FractalSimplifiedTests
-//
-//  Created by Sergey Slavinskiy on 14.08.2018.
-//  Copyright © 2018 Sergey Slavinskiy. All rights reserved.
-//
+import Foundation
 
-import XCTest
 @testable import FractalSimplified
 
-class FractalSimplifiedTests: XCTestCase {
+final class FractalSimplifiedTests {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    let view: WelcomeScreenUseCase.TestView
+    
+    init() {
+        // Inject your mock dependencies here
+        self.root = WelcomeScreenUseCase()
+        self.view = WelcomeScreenUseCase.TestView(AnyPresentable(self.root))
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    private let root: WelcomeScreenUseCase
+}
+
+extension FractalSimplifiedTests {
+    
+    func openSignUp() {
+        self.view.signUpAction.simpleAction()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func signUp() {
+        self.openSignUp()
+        self.view.signUpScreen.email.sink("some@email.com")
+        self.view.signUpScreen.passwordSink("123456")
+        self.view.signUpAction.simpleAction()
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }
