@@ -1,7 +1,7 @@
 import Foundation
 import RxSwift
 
-final class EmailFieldUseCase {
+final class EmailFieldViewModel {
     
     enum Result {
         case valid(String)
@@ -35,7 +35,7 @@ final class EmailFieldUseCase {
 
 }
 
-extension EmailFieldUseCase: Presentable {
+extension EmailFieldViewModel: Presentable {
     
     var present: (EmailFieldPresenters) -> Disposable {
         return { [weak self] presenters in
@@ -52,8 +52,8 @@ extension EmailFieldUseCase: Presentable {
     
 }
 
-extension EmailFieldUseCase.Result: Equatable {
-    static func ==(lhs: EmailFieldUseCase.Result, rhs: EmailFieldUseCase.Result) -> Bool {
+extension EmailFieldViewModel.Result: Equatable {
+    static func ==(lhs: EmailFieldViewModel.Result, rhs: EmailFieldViewModel.Result) -> Bool {
         switch (lhs, rhs) {
         case let (.valid(l), .valid(r)):
             return l == r
@@ -66,7 +66,7 @@ extension EmailFieldUseCase.Result: Equatable {
     }
 }
 
-private func makeResult(email: String?) -> EmailFieldUseCase.Result {
+private func makeResult(email: String?) -> EmailFieldViewModel.Result {
     return email.map { $0.isValidEmail ? .valid($0) : .invalid($0) } ?? .invalid(email)
 }
 

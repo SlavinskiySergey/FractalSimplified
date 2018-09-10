@@ -3,7 +3,7 @@ import RxSwift
 
 @testable import FractalSimplified
 
-extension SignUpScreenUseCase {
+extension SignUpScreenViewModel {
     
     final class TestView: TestViewType {
         
@@ -12,7 +12,7 @@ extension SignUpScreenUseCase {
         let _backSink = AnyTestView<() -> Void>.View()
         let _passwordPlaceholder = AnyTestView<String>.View()
         let _passwordSink = AnyTestView<(String?) -> Void>.View()
-        let _email = EmailFieldUseCase.TestView.View()
+        let _email = EmailFieldViewModel.TestView.View()
         let _signUpTitle = AnyTestView<String>.View()
         let _signUpAction = ActionViewModel.TestView.View()
         
@@ -33,13 +33,13 @@ extension SignUpScreenUseCase {
     }
 }
 
-extension SignUpScreenUseCase.TestView {
+extension SignUpScreenViewModel.TestView {
     var title: String! { return self._title.last?.value }
     var backTitle: String! { return self._backTitle.last?.value }
     var backSink: (() -> Void)! { return self._backSink.last?.value }
     var passwordPlaceholder: String! { return self._passwordPlaceholder.last?.value }
     var passwordSink: ((String?) -> Void)! { return self._passwordSink.last?.value }
-    var email: EmailFieldUseCase.TestView! { return self._email.last }
+    var email: EmailFieldViewModel.TestView! { return self._email.last }
     var signUpTitle: String! { return self._signUpTitle.last?.value }
     var signUpAction: ActionViewModel.TestView! { return self._signUpAction.last }
 }

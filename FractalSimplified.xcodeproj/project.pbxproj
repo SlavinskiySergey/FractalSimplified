@@ -20,22 +20,22 @@
 		87C548E72122CA3900965FD2 /* FractalSimplified.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C548E62122CA3900965FD2 /* FractalSimplified.swift */; };
 		87C548EC2122CA8D00965FD2 /* ActionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C548EB2122CA8D00965FD2 /* ActionViewModel.swift */; };
 		87C548EF2122CA9E00965FD2 /* EmailFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C548ED2122CA9E00965FD2 /* EmailFieldView.swift */; };
-		87C548F02122CA9E00965FD2 /* EmailFieldUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C548EE2122CA9E00965FD2 /* EmailFieldUseCase.swift */; };
-		87C548F62122D20B00965FD2 /* SignUpScreenUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C548F52122D20B00965FD2 /* SignUpScreenUseCase.swift */; };
+		87C548F02122CA9E00965FD2 /* EmailFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C548EE2122CA9E00965FD2 /* EmailFieldViewModel.swift */; };
+		87C548F62122D20B00965FD2 /* SignUpScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C548F52122D20B00965FD2 /* SignUpScreenViewModel.swift */; };
 		87C548F82122D22D00965FD2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C548F72122D22D00965FD2 /* SignUpViewController.swift */; };
 		87C548FD2122FF7D00965FD2 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C548FC2122FF7D00965FD2 /* WelcomeViewController.swift */; };
-		87C548FF21230E0E00965FD2 /* WelcomeScreenUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C548FE21230E0D00965FD2 /* WelcomeScreenUseCase.swift */; };
+		87C548FF21230E0E00965FD2 /* WelcomeScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C548FE21230E0D00965FD2 /* WelcomeScreenViewModel.swift */; };
 		87C71C6D2124627A00C5FEBF /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C71C6C2124627A00C5FEBF /* TestView.swift */; };
 		87C71C6F2124628E00C5FEBF /* PresentedValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C71C6E2124628E00C5FEBF /* PresentedValue.swift */; };
 		87C71C72212468B100C5FEBF /* Observable+TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C71C71212468B100C5FEBF /* Observable+TestUtils.swift */; };
 		87C71C74212468C300C5FEBF /* ActionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C71C73212468C300C5FEBF /* ActionMock.swift */; };
 		87C71C782124881F00C5FEBF /* ActionViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C71C772124881F00C5FEBF /* ActionViewModelSpec.swift */; };
-		87E714F22127149F00A4FB99 /* EmailFieldUseCase+TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E714F12127149F00A4FB99 /* EmailFieldUseCase+TestView.swift */; };
-		87E714F52127164D00A4FB99 /* EmailFieldUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E714F42127164D00A4FB99 /* EmailFieldUseCaseSpec.swift */; };
-		87E714F7212718BA00A4FB99 /* SignUpScreenUseCase+TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E714F6212718BA00A4FB99 /* SignUpScreenUseCase+TestView.swift */; };
-		87E714FA212719AB00A4FB99 /* SignUpScreenUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E714F9212719AB00A4FB99 /* SignUpScreenUseCaseSpec.swift */; };
-		87E7ED9B212ABA1300C5B3C9 /* WelcomeScreenUseCase+TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E7ED9A212ABA1300C5B3C9 /* WelcomeScreenUseCase+TestView.swift */; };
-		87E7ED9E212ABA9F00C5B3C9 /* WelcomeScreenUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E7ED9D212ABA9F00C5B3C9 /* WelcomeScreenUseCaseSpec.swift */; };
+		87D6DFBC2146D59C0000C806 /* SignUpScreenViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D6DFBB2146D59C0000C806 /* SignUpScreenViewModelSpec.swift */; };
+		87E714F22127149F00A4FB99 /* EmailFieldViewModel+TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E714F12127149F00A4FB99 /* EmailFieldViewModel+TestView.swift */; };
+		87E714F52127164D00A4FB99 /* EmailFieldViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E714F42127164D00A4FB99 /* EmailFieldViewModelSpec.swift */; };
+		87E714F7212718BA00A4FB99 /* SignUpScreenViewModel+TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E714F6212718BA00A4FB99 /* SignUpScreenViewModel+TestView.swift */; };
+		87E7ED9B212ABA1300C5B3C9 /* WelcomeScreenViewModel+TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E7ED9A212ABA1300C5B3C9 /* WelcomeScreenViewModel+TestView.swift */; };
+		87E7ED9E212ABA9F00C5B3C9 /* WelcomeScreenViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E7ED9D212ABA9F00C5B3C9 /* WelcomeScreenViewModelSpec.swift */; };
 		E1036C79ECE88392BB448581 /* Pods_FractalSimplifiedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A31D3BA55BB059B657B5324C /* Pods_FractalSimplifiedTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,22 +78,22 @@
 		87C548E62122CA3900965FD2 /* FractalSimplified.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FractalSimplified.swift; sourceTree = "<group>"; };
 		87C548EB2122CA8D00965FD2 /* ActionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionViewModel.swift; sourceTree = "<group>"; };
 		87C548ED2122CA9E00965FD2 /* EmailFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailFieldView.swift; sourceTree = "<group>"; };
-		87C548EE2122CA9E00965FD2 /* EmailFieldUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailFieldUseCase.swift; sourceTree = "<group>"; };
-		87C548F52122D20B00965FD2 /* SignUpScreenUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenUseCase.swift; sourceTree = "<group>"; };
+		87C548EE2122CA9E00965FD2 /* EmailFieldViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailFieldViewModel.swift; sourceTree = "<group>"; };
+		87C548F52122D20B00965FD2 /* SignUpScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenViewModel.swift; sourceTree = "<group>"; };
 		87C548F72122D22D00965FD2 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		87C548FC2122FF7D00965FD2 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		87C548FE21230E0D00965FD2 /* WelcomeScreenUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeScreenUseCase.swift; sourceTree = "<group>"; };
+		87C548FE21230E0D00965FD2 /* WelcomeScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeScreenViewModel.swift; sourceTree = "<group>"; };
 		87C71C6C2124627A00C5FEBF /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		87C71C6E2124628E00C5FEBF /* PresentedValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentedValue.swift; sourceTree = "<group>"; };
 		87C71C71212468B100C5FEBF /* Observable+TestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+TestUtils.swift"; sourceTree = "<group>"; };
 		87C71C73212468C300C5FEBF /* ActionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionMock.swift; sourceTree = "<group>"; };
 		87C71C772124881F00C5FEBF /* ActionViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewModelSpec.swift; sourceTree = "<group>"; };
-		87E714F12127149F00A4FB99 /* EmailFieldUseCase+TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmailFieldUseCase+TestView.swift"; sourceTree = "<group>"; };
-		87E714F42127164D00A4FB99 /* EmailFieldUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailFieldUseCaseSpec.swift; sourceTree = "<group>"; };
-		87E714F6212718BA00A4FB99 /* SignUpScreenUseCase+TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpScreenUseCase+TestView.swift"; sourceTree = "<group>"; };
-		87E714F9212719AB00A4FB99 /* SignUpScreenUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenUseCaseSpec.swift; sourceTree = "<group>"; };
-		87E7ED9A212ABA1300C5B3C9 /* WelcomeScreenUseCase+TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WelcomeScreenUseCase+TestView.swift"; sourceTree = "<group>"; };
-		87E7ED9D212ABA9F00C5B3C9 /* WelcomeScreenUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenUseCaseSpec.swift; sourceTree = "<group>"; };
+		87D6DFBB2146D59C0000C806 /* SignUpScreenViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpScreenViewModelSpec.swift; sourceTree = "<group>"; };
+		87E714F12127149F00A4FB99 /* EmailFieldViewModel+TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmailFieldViewModel+TestView.swift"; sourceTree = "<group>"; };
+		87E714F42127164D00A4FB99 /* EmailFieldViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailFieldViewModelSpec.swift; sourceTree = "<group>"; };
+		87E714F6212718BA00A4FB99 /* SignUpScreenViewModel+TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpScreenViewModel+TestView.swift"; sourceTree = "<group>"; };
+		87E7ED9A212ABA1300C5B3C9 /* WelcomeScreenViewModel+TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WelcomeScreenViewModel+TestView.swift"; sourceTree = "<group>"; };
+		87E7ED9D212ABA9F00C5B3C9 /* WelcomeScreenViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenViewModelSpec.swift; sourceTree = "<group>"; };
 		8969F6FA57CEC04925325165 /* Pods-FractalSimplified.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FractalSimplified.release.xcconfig"; path = "Pods/Target Support Files/Pods-FractalSimplified/Pods-FractalSimplified.release.xcconfig"; sourceTree = "<group>"; };
 		A31D3BA55BB059B657B5324C /* Pods_FractalSimplifiedTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FractalSimplifiedTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A72360379FF35ACE21B05A5E /* Pods_FractalSimplified.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FractalSimplified.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,9 +130,9 @@
 			isa = PBXGroup;
 			children = (
 				8726D26721257502003FF2D5 /* ActionViewModel+TestView.swift */,
-				87E714F12127149F00A4FB99 /* EmailFieldUseCase+TestView.swift */,
-				87E714F6212718BA00A4FB99 /* SignUpScreenUseCase+TestView.swift */,
-				87E7ED9A212ABA1300C5B3C9 /* WelcomeScreenUseCase+TestView.swift */,
+				87E714F12127149F00A4FB99 /* EmailFieldViewModel+TestView.swift */,
+				87E714F6212718BA00A4FB99 /* SignUpScreenViewModel+TestView.swift */,
+				87E7ED9A212ABA1300C5B3C9 /* WelcomeScreenViewModel+TestView.swift */,
 			);
 			path = TestUtils;
 			sourceTree = "<group>";
@@ -164,7 +164,7 @@
 			children = (
 				87C71C6A2124623B00C5FEBF /* TestUtils */,
 				87C548DC2122C9CA00965FD2 /* Fractal */,
-				87C548F12122CB0400965FD2 /* UseCases */,
+				87C548F12122CB0400965FD2 /* ViewModels */,
 				87C548AE2122B83100965FD2 /* AppDelegate.swift */,
 				87C548B52122B83200965FD2 /* Assets.xcassets */,
 				87C548B72122B83200965FD2 /* LaunchScreen.storyboard */,
@@ -176,7 +176,7 @@
 		87C548C22122B83200965FD2 /* FractalSimplifiedTests */ = {
 			isa = PBXGroup;
 			children = (
-				87C71C75212487E600C5FEBF /* UseCases */,
+				87C71C75212487E600C5FEBF /* ViewModels */,
 				8726D266212574C6003FF2D5 /* TestUtils */,
 				87C548C32122B83200965FD2 /* FractalSimplifiedTests.swift */,
 				87C548C52122B83200965FD2 /* Info.plist */,
@@ -223,13 +223,13 @@
 		87C548EA2122CA7100965FD2 /* EmailField */ = {
 			isa = PBXGroup;
 			children = (
-				87C548EE2122CA9E00965FD2 /* EmailFieldUseCase.swift */,
+				87C548EE2122CA9E00965FD2 /* EmailFieldViewModel.swift */,
 				87C548ED2122CA9E00965FD2 /* EmailFieldView.swift */,
 			);
 			path = EmailField;
 			sourceTree = "<group>";
 		};
-		87C548F12122CB0400965FD2 /* UseCases */ = {
+		87C548F12122CB0400965FD2 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				87C548E92122CA6600965FD2 /* ActionViewModel */,
@@ -237,13 +237,13 @@
 				87C548F42122D1C300965FD2 /* SignUp */,
 				87C548F92122FF2700965FD2 /* Welcome */,
 			);
-			path = UseCases;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		87C548F42122D1C300965FD2 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
-				87C548F52122D20B00965FD2 /* SignUpScreenUseCase.swift */,
+				87C548F52122D20B00965FD2 /* SignUpScreenViewModel.swift */,
 				87C548F72122D22D00965FD2 /* SignUpViewController.swift */,
 			);
 			path = SignUp;
@@ -252,7 +252,7 @@
 		87C548F92122FF2700965FD2 /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
-				87C548FE21230E0D00965FD2 /* WelcomeScreenUseCase.swift */,
+				87C548FE21230E0D00965FD2 /* WelcomeScreenViewModel.swift */,
 				87C548FC2122FF7D00965FD2 /* WelcomeViewController.swift */,
 			);
 			path = Welcome;
@@ -285,7 +285,7 @@
 			path = RxSwiftTestUtils;
 			sourceTree = "<group>";
 		};
-		87C71C75212487E600C5FEBF /* UseCases */ = {
+		87C71C75212487E600C5FEBF /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				87C71C76212487FA00C5FEBF /* ActionViewModel */,
@@ -293,7 +293,7 @@
 				87E714F82127197900A4FB99 /* SignUpScreen */,
 				87E7ED9C212ABA7200C5B3C9 /* WelcomeScreen */,
 			);
-			path = UseCases;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		87C71C76212487FA00C5FEBF /* ActionViewModel */ = {
@@ -307,7 +307,7 @@
 		87E714F32127160A00A4FB99 /* EmailField */ = {
 			isa = PBXGroup;
 			children = (
-				87E714F42127164D00A4FB99 /* EmailFieldUseCaseSpec.swift */,
+				87E714F42127164D00A4FB99 /* EmailFieldViewModelSpec.swift */,
 			);
 			path = EmailField;
 			sourceTree = "<group>";
@@ -315,7 +315,7 @@
 		87E714F82127197900A4FB99 /* SignUpScreen */ = {
 			isa = PBXGroup;
 			children = (
-				87E714F9212719AB00A4FB99 /* SignUpScreenUseCaseSpec.swift */,
+				87D6DFBB2146D59C0000C806 /* SignUpScreenViewModelSpec.swift */,
 			);
 			path = SignUpScreen;
 			sourceTree = "<group>";
@@ -323,7 +323,7 @@
 		87E7ED9C212ABA7200C5B3C9 /* WelcomeScreen */ = {
 			isa = PBXGroup;
 			children = (
-				87E7ED9D212ABA9F00C5B3C9 /* WelcomeScreenUseCaseSpec.swift */,
+				87E7ED9D212ABA9F00C5B3C9 /* WelcomeScreenViewModelSpec.swift */,
 			);
 			path = WelcomeScreen;
 			sourceTree = "<group>";
@@ -567,10 +567,10 @@
 				87C548E42122CA1900965FD2 /* UILabel.swift in Sources */,
 				87C548E72122CA3900965FD2 /* FractalSimplified.swift in Sources */,
 				87C71C74212468C300C5FEBF /* ActionMock.swift in Sources */,
-				87C548F02122CA9E00965FD2 /* EmailFieldUseCase.swift in Sources */,
-				87C548F62122D20B00965FD2 /* SignUpScreenUseCase.swift in Sources */,
+				87C548F02122CA9E00965FD2 /* EmailFieldViewModel.swift in Sources */,
+				87C548F62122D20B00965FD2 /* SignUpScreenViewModel.swift in Sources */,
 				87C548FD2122FF7D00965FD2 /* WelcomeViewController.swift in Sources */,
-				87C548FF21230E0E00965FD2 /* WelcomeScreenUseCase.swift in Sources */,
+				87C548FF21230E0E00965FD2 /* WelcomeScreenViewModel.swift in Sources */,
 				87C548AF2122B83100965FD2 /* AppDelegate.swift in Sources */,
 				87C548EC2122CA8D00965FD2 /* ActionViewModel.swift in Sources */,
 				87C548E32122CA1900965FD2 /* UIButton.swift in Sources */,
@@ -586,14 +586,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87E714FA212719AB00A4FB99 /* SignUpScreenUseCaseSpec.swift in Sources */,
-				87E7ED9B212ABA1300C5B3C9 /* WelcomeScreenUseCase+TestView.swift in Sources */,
+				87E7ED9B212ABA1300C5B3C9 /* WelcomeScreenViewModel+TestView.swift in Sources */,
 				87C548C42122B83200965FD2 /* FractalSimplifiedTests.swift in Sources */,
-				87E7ED9E212ABA9F00C5B3C9 /* WelcomeScreenUseCaseSpec.swift in Sources */,
+				87E7ED9E212ABA9F00C5B3C9 /* WelcomeScreenViewModelSpec.swift in Sources */,
+				87D6DFBC2146D59C0000C806 /* SignUpScreenViewModelSpec.swift in Sources */,
 				8726D26821257502003FF2D5 /* ActionViewModel+TestView.swift in Sources */,
-				87E714F22127149F00A4FB99 /* EmailFieldUseCase+TestView.swift in Sources */,
-				87E714F52127164D00A4FB99 /* EmailFieldUseCaseSpec.swift in Sources */,
-				87E714F7212718BA00A4FB99 /* SignUpScreenUseCase+TestView.swift in Sources */,
+				87E714F22127149F00A4FB99 /* EmailFieldViewModel+TestView.swift in Sources */,
+				87E714F52127164D00A4FB99 /* EmailFieldViewModelSpec.swift in Sources */,
+				87E714F7212718BA00A4FB99 /* SignUpScreenViewModel+TestView.swift in Sources */,
 				87C71C782124881F00C5FEBF /* ActionViewModelSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -2,7 +2,7 @@ import Foundation
 import RxSwift
 import Action
 
-final class WelcomeScreenUseCase {
+final class WelcomeScreenViewModel {
     
     init() {
         self.title = "Welcome"
@@ -12,27 +12,27 @@ final class WelcomeScreenUseCase {
         self.signUpAction = ActionViewModel(action: showSignUp)
         
         showSignUp.elements
-            .flatMapLatest { (_) -> Observable<SignUpScreenUseCase?> in
-                let useCase = SignUpScreenUseCase()
-                return useCase.result.asObserver()
+            .flatMapLatest { (_) -> Observable<SignUpScreenViewModel?> in
+                let viewModel = SignUpScreenViewModel()
+                return viewModel.result.asObserver()
                     .filter { $0.isBack }
                     .map { _ in nil }
                     .take(1)
-                    .startWith(useCase)
+                    .startWith(viewModel)
             }
-            .bind(to: self.signUpUseCase)
+            .bind(to: self.signUpViewModel)
             .disposed(by: self.disposeBag)        
     }
     
     private let title: String
     private let signUpTitle: String
     private let signUpAction: ActionViewModel
-    private let signUpUseCase = BehaviorSubject<SignUpScreenUseCase?>(value: nil)
+    private let signUpViewModel = BehaviorSubject<SignUpScreenViewModel?>(value: nil)
     
     private let disposeBag = DisposeBag()
 }
 
-extension WelcomeScreenUseCase: Presentable {
+extension WelcomeScreenViewModel: Presentable {
     
     var present: (WelcomeScreenPresenters) -> Disposable {
         return { [weak self] presenters in
@@ -43,7 +43,7 @@ extension WelcomeScreenUseCase: Presentable {
             let titleDisposable = presenters.title.present(someSelf.title)
             let signUpTitleDisposable = presenters.signUpTitle.present(someSelf.signUpTitle)
             let signUpActionDisposable = presenters.signUpAction.present(someSelf.signUpAction)
-            let signUpScreenDisposable = presenters.signUpScreen.present(someSelf.signUpUseCase.asObservable().map { $0.map(AnyPresentable.init) })
+            let signUpScreenDisposable = presenters.signUpScreen.present(someSelf.signUpViewModel.asObservable().map { $0.map(AnyPresentable.init) })
             
             return CompositeDisposable(disposables: [titleDisposable, signUpTitleDisposable, signUpActionDisposable, signUpScreenDisposable])
         }
@@ -56,7 +56,7 @@ extension Action where Input == Element {
     }
 }
 
-private extension SignUpScreenUseCase.Result {
+private extension SignUpScreenViewModel.Result {
     var isBack: Bool {
         switch self {
         case .back: return true

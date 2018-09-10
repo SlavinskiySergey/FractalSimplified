@@ -4,15 +4,15 @@ import Foundation
 
 final class FractalSimplifiedTests {
     
-    let view: WelcomeScreenUseCase.TestView
+    let view: WelcomeScreenViewModel.TestView
     
     init() {
         // Inject your mock dependencies here
-        self.root = WelcomeScreenUseCase()
-        self.view = WelcomeScreenUseCase.TestView(AnyPresentable(self.root))
+        self.root = WelcomeScreenViewModel()
+        self.view = WelcomeScreenViewModel.TestView(AnyPresentable(self.root))
     }
     
-    private let root: WelcomeScreenUseCase
+    private let root: WelcomeScreenViewModel
 }
 
 extension FractalSimplifiedTests {

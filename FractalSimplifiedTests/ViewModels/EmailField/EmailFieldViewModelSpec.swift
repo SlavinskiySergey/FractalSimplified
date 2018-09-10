@@ -5,13 +5,13 @@ import RxSwift
 
 @testable import FractalSimplified
 
-final class EmailFieldUseCaseSpec: QuickSpec {
+final class EmailFieldViewModelSpec: QuickSpec {
     
     override func spec() {
         
         describe("EmailField") {
             
-            typealias SUT = EmailFieldUseCase
+            typealias SUT = EmailFieldViewModel
             
             var sut: SUT!
             var view: SUT.TestView!

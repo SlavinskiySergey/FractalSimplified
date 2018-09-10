@@ -5,13 +5,13 @@ import Nimble
 
 @testable import FractalSimplified
 
-final class SignUpScreenUseCaseSpec: QuickSpec {
+final class SignUpScreenViewModelSpec: QuickSpec {
     
     override func spec() {
         
         describe("SignUpScreen") {
             
-            typealias SUT = SignUpScreenUseCase
+            typealias SUT = SignUpScreenViewModel
             
             var sut: SUT!
             var view: SUT.TestView!

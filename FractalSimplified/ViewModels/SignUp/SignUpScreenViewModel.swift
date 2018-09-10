@@ -2,7 +2,7 @@ import Foundation
 import RxSwift
 import Action
 
-final class SignUpScreenUseCase {
+final class SignUpScreenViewModel {
     
     enum Result {
         case back
@@ -16,7 +16,7 @@ final class SignUpScreenUseCase {
         self.backSink = self.backSubject.onNext
         self.passwordPlaceholder = "Password"
         self.passwordSink = self.passwordSubject.onNext
-        self.email = EmailFieldUseCase()
+        self.email = EmailFieldViewModel()
         self.backSubject.asObserver()
             .map { Result.back }
             .bind(to: self.result)
@@ -60,7 +60,7 @@ final class SignUpScreenUseCase {
     private let backSink: (Void) -> ()
     private let passwordPlaceholder: String
     private let passwordSink: (String?) -> Void
-    private let email: EmailFieldUseCase
+    private let email: EmailFieldViewModel
     private let signUpTitle: String
     private let signUpAction: ActionViewModel
     
@@ -71,7 +71,7 @@ final class SignUpScreenUseCase {
     
 }
 
-extension SignUpScreenUseCase: Presentable {
+extension SignUpScreenViewModel: Presentable {
     
     var present: (SignUpScreenPresenters) -> Disposable {
         return { [weak self] presenters in

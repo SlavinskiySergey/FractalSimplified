@@ -14,9 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.makeKeyAndVisible()
         self.window = window
         
-        let welcomeScreenUseCase = WelcomeScreenUseCase()
-        self.disposable = welcomeViewController.presenter.present(welcomeScreenUseCase)
-        self.root = welcomeScreenUseCase
+        let welcomeScreenViewModel = WelcomeScreenViewModel()
+        self.disposable = welcomeViewController.presenter.present(welcomeScreenViewModel)
+        self.root = welcomeScreenViewModel
         
         return true
     }
@@ -26,6 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private var disposable: Disposable?
-    private var root: WelcomeScreenUseCase?
+    private var root: WelcomeScreenViewModel?
 }
 

@@ -50,8 +50,8 @@ extension Presenter {
     }
     
     /// Present BehaviorSubject of ViewModel
-    func present(_ behaviorRelay: BehaviorSubject<ViewModel>) -> Disposable {
-        return present(behaviorRelay)
+    func present(_ behaviorSubject: BehaviorSubject<ViewModel>) -> Disposable {
+        return present(behaviorSubject)
     }
     
     /// Present any Presentable with same Presenters

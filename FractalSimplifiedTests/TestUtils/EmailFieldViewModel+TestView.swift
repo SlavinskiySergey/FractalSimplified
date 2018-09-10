@@ -5,7 +5,7 @@ import RxSwift
 
 @testable import FractalSimplified
 
-extension EmailFieldUseCase {
+extension EmailFieldViewModel {
     
     final class TestView: TestViewType {
         
@@ -23,7 +23,7 @@ extension EmailFieldUseCase {
     }
 }
 
-extension EmailFieldUseCase.TestView {
+extension EmailFieldViewModel.TestView {
     var placeholder: String! { return self._placeholder.last?.value }
     var sink: ((String?) -> Void)! { return self._sink.last?.value }
 }

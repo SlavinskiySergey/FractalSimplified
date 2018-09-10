@@ -3,14 +3,14 @@ import RxSwift
 
 @testable import FractalSimplified
 
-extension WelcomeScreenUseCase {
+extension WelcomeScreenViewModel {
     
     final class TestView: TestViewType {
         
         let _title = AnyTestView<String>.View()
         let _signUpTitle = AnyTestView<String>.View()
         let _signUpAction = ActionViewModel.TestView.View()
-        let _signUpScreen = SignUpScreenUseCase.TestView.Optional.View()
+        let _signUpScreen = SignUpScreenViewModel.TestView.Optional.View()
         
         let disposable: Disposable?
         
@@ -25,9 +25,9 @@ extension WelcomeScreenUseCase {
     }
 }
 
-extension WelcomeScreenUseCase.TestView {
+extension WelcomeScreenViewModel.TestView {
     var title: String! { return self._title.last?.value }
     var signUpTitle: String! { return self._signUpTitle.last?.value }
     var signUpAction: ActionViewModel.TestView! { return self._signUpAction.last }
-    var signUpScreen: SignUpScreenUseCase.TestView! { return self._signUpScreen.last?.view }
+    var signUpScreen: SignUpScreenViewModel.TestView! { return self._signUpScreen.last?.view }
 }
