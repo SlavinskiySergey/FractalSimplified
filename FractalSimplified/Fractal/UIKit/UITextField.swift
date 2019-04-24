@@ -4,9 +4,9 @@ import RxSwift
 extension UITextField {
     
     var textSinkPresenter: Presenter<(String?) -> Void> {
-        return Presenter.UI { [weak self] (sink) -> Disposable in
+        return Presenter.UI { [weak self] (sink) -> Disposable? in
             guard let someSelf = self else {
-                return Disposables.create()
+                return nil
             }
             let didChangeObserver = someSelf.createDidChangeObserver(with: sink)
             return Disposables.create {
@@ -18,7 +18,7 @@ extension UITextField {
     var placeholderPresenter: Presenter<String> {
         return Presenter.UI { [weak self] string in
             self?.placeholder = string
-            return Disposables.create()
+            return nil
         }
     }
     

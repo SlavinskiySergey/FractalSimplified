@@ -73,21 +73,25 @@ final class SignUpScreenViewModel {
 
 extension SignUpScreenViewModel: Presentable {
     
-    var present: (SignUpScreenPresenters) -> Disposable {
+    var present: (SignUpScreenPresenters) -> Disposable? {
         return { [weak self] presenters in
             guard let someSelf = self else {
-                return Disposables.create()
+                return nil
             }
-            let titleDisposable = presenters.title.present(someSelf.title)
-            let backTitleDisposable = presenters.backTitle.present(someSelf.backTitle)
-            let backSinkDisposable = presenters.backSink.present(someSelf.backSink)
-            let passwordPlaceholderDisposable = presenters.passwordPlaceholder.present(someSelf.passwordPlaceholder)
-            let passwordSinkDisposable = presenters.passwordSink.present(someSelf.passwordSink)
-            let emailDisposable = presenters.email.present(someSelf.email)
-            let signUpTitleDisposable = presenters.signUpTitle.present(someSelf.signUpTitle)
-            let signUpActionDisposable = presenters.signUpAction.present(someSelf.signUpAction)
             
-            return CompositeDisposable(disposables: [titleDisposable, backTitleDisposable, backSinkDisposable, passwordPlaceholderDisposable, passwordSinkDisposable, emailDisposable, signUpTitleDisposable, signUpActionDisposable])
+            let disposables = [
+                presenters.title.present(someSelf.title),
+                presenters.backTitle.present(someSelf.backTitle),
+                presenters.backSink.present(someSelf.backSink),
+                presenters.passwordPlaceholder.present(someSelf.passwordPlaceholder),
+                presenters.passwordSink.present(someSelf.passwordSink),
+                presenters.email.present(someSelf.email),
+                presenters.signUpTitle.present(someSelf.signUpTitle),
+                presenters.signUpAction.present(someSelf.signUpAction),
+                ]
+                .compactMap { $0 }
+            
+            return CompositeDisposable(disposables: disposables)
         }
     }
 }

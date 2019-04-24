@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B257DEB227047E300C1A0BD /* SuperSecuredViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B257DEA227047E300C1A0BD /* SuperSecuredViewModel.swift */; };
+		3B257DED2270480B00C1A0BD /* SuperSecuredViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B257DEC2270480B00C1A0BD /* SuperSecuredViewController.swift */; };
+		3B257DF02270488E00C1A0BD /* UI+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B257DEF2270488E00C1A0BD /* UI+Utils.swift */; };
+		3B257DF22270490900C1A0BD /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B257DF12270490900C1A0BD /* Alert.swift */; };
+		3B257DF5227049D000C1A0BD /* Reactive+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B257DF4227049D000C1A0BD /* Reactive+Utils.swift */; };
+		3B257DF722704C3500C1A0BD /* AuthorizationEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B257DF622704C3500C1A0BD /* AuthorizationEndpoint.swift */; };
+		3B257DF922704C7F00C1A0BD /* SuperSecuredEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B257DF822704C7F00C1A0BD /* SuperSecuredEndpoint.swift */; };
+		3B257DFB22704D0F00C1A0BD /* Endpoint+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B257DFA22704D0F00C1A0BD /* Endpoint+Helpers.swift */; };
+		3B257DFE2270511000C1A0BD /* Retryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B257DFD2270511000C1A0BD /* Retryable.swift */; };
 		40287F4D78426A5354F31308 /* Pods_FractalSimplified.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A72360379FF35ACE21B05A5E /* Pods_FractalSimplified.framework */; };
 		8726D26821257502003FF2D5 /* ActionViewModel+TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8726D26721257502003FF2D5 /* ActionViewModel+TestView.swift */; };
 		87C548AF2122B83100965FD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C548AE2122B83100965FD2 /* AppDelegate.swift */; };
@@ -59,6 +68,15 @@
 /* Begin PBXFileReference section */
 		039B4338A87EE6216D5D725A /* Pods-FractalSimplifiedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FractalSimplifiedTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FractalSimplifiedTests/Pods-FractalSimplifiedTests.release.xcconfig"; sourceTree = "<group>"; };
 		3AC80AD31E8738038EF245F6 /* Pods-FractalSimplified.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FractalSimplified.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FractalSimplified/Pods-FractalSimplified.debug.xcconfig"; sourceTree = "<group>"; };
+		3B257DEA227047E300C1A0BD /* SuperSecuredViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperSecuredViewModel.swift; sourceTree = "<group>"; };
+		3B257DEC2270480B00C1A0BD /* SuperSecuredViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperSecuredViewController.swift; sourceTree = "<group>"; };
+		3B257DEF2270488E00C1A0BD /* UI+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UI+Utils.swift"; sourceTree = "<group>"; };
+		3B257DF12270490900C1A0BD /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		3B257DF4227049D000C1A0BD /* Reactive+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Utils.swift"; sourceTree = "<group>"; };
+		3B257DF622704C3500C1A0BD /* AuthorizationEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationEndpoint.swift; sourceTree = "<group>"; };
+		3B257DF822704C7F00C1A0BD /* SuperSecuredEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperSecuredEndpoint.swift; sourceTree = "<group>"; };
+		3B257DFA22704D0F00C1A0BD /* Endpoint+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Helpers.swift"; sourceTree = "<group>"; };
+		3B257DFD2270511000C1A0BD /* Retryable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Retryable.swift; sourceTree = "<group>"; };
 		5DA59734A00CDAE6E6CD23DC /* Pods-FractalSimplifiedTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FractalSimplifiedTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FractalSimplifiedTests/Pods-FractalSimplifiedTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8726D26721257502003FF2D5 /* ActionViewModel+TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActionViewModel+TestView.swift"; sourceTree = "<group>"; };
 		87C548AB2122B83100965FD2 /* FractalSimplified.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FractalSimplified.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +144,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B257DEE2270487500C1A0BD /* UI+Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3B257DEF2270488E00C1A0BD /* UI+Utils.swift */,
+				3B257DF12270490900C1A0BD /* Alert.swift */,
+			);
+			path = "UI+Utils";
+			sourceTree = "<group>";
+		};
+		3B257DF3227049B300C1A0BD /* Reactive+Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3B257DF4227049D000C1A0BD /* Reactive+Utils.swift */,
+			);
+			path = "Reactive+Utils";
+			sourceTree = "<group>";
+		};
+		3B257DFC227050EB00C1A0BD /* Retryable */ = {
+			isa = PBXGroup;
+			children = (
+				3B257DFD2270511000C1A0BD /* Retryable.swift */,
+			);
+			path = Retryable;
+			sourceTree = "<group>";
+		};
+		3BED4D7B226F7C1700DB36A8 /* SuperSecured */ = {
+			isa = PBXGroup;
+			children = (
+				3B257DEA227047E300C1A0BD /* SuperSecuredViewModel.swift */,
+				3B257DEC2270480B00C1A0BD /* SuperSecuredViewController.swift */,
+				3B257DF622704C3500C1A0BD /* AuthorizationEndpoint.swift */,
+				3B257DF822704C7F00C1A0BD /* SuperSecuredEndpoint.swift */,
+				3B257DFA22704D0F00C1A0BD /* Endpoint+Helpers.swift */,
+			);
+			path = SuperSecured;
+			sourceTree = "<group>";
+		};
 		8726D266212574C6003FF2D5 /* TestUtils */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +217,9 @@
 		87C548AD2122B83100965FD2 /* FractalSimplified */ = {
 			isa = PBXGroup;
 			children = (
+				3B257DFC227050EB00C1A0BD /* Retryable */,
+				3B257DF3227049B300C1A0BD /* Reactive+Utils */,
+				3B257DEE2270487500C1A0BD /* UI+Utils */,
 				87C71C6A2124623B00C5FEBF /* TestUtils */,
 				87C548DC2122C9CA00965FD2 /* Fractal */,
 				87C548F12122CB0400965FD2 /* ViewModels */,
@@ -236,6 +294,7 @@
 				87C548EA2122CA7100965FD2 /* EmailField */,
 				87C548F42122D1C300965FD2 /* SignUp */,
 				87C548F92122FF2700965FD2 /* Welcome */,
+				3BED4D7B226F7C1700DB36A8 /* SuperSecured */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -484,7 +543,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-FractalSimplified/Pods-FractalSimplified-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-FractalSimplified/Pods-FractalSimplified-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Action/Action.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -497,7 +556,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FractalSimplified/Pods-FractalSimplified-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FractalSimplified/Pods-FractalSimplified-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7FBDB124024022AB81F61E7E /* [CP] Check Pods Manifest.lock */ = {
@@ -542,7 +601,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-FractalSimplifiedTests/Pods-FractalSimplifiedTests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-FractalSimplifiedTests/Pods-FractalSimplifiedTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 			);
@@ -553,7 +612,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FractalSimplifiedTests/Pods-FractalSimplifiedTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FractalSimplifiedTests/Pods-FractalSimplifiedTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -563,21 +622,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B257DFB22704D0F00C1A0BD /* Endpoint+Helpers.swift in Sources */,
 				87C548F82122D22D00965FD2 /* SignUpViewController.swift in Sources */,
 				87C548E42122CA1900965FD2 /* UILabel.swift in Sources */,
 				87C548E72122CA3900965FD2 /* FractalSimplified.swift in Sources */,
 				87C71C74212468C300C5FEBF /* ActionMock.swift in Sources */,
+				3B257DF922704C7F00C1A0BD /* SuperSecuredEndpoint.swift in Sources */,
 				87C548F02122CA9E00965FD2 /* EmailFieldViewModel.swift in Sources */,
 				87C548F62122D20B00965FD2 /* SignUpScreenViewModel.swift in Sources */,
+				3B257DF5227049D000C1A0BD /* Reactive+Utils.swift in Sources */,
 				87C548FD2122FF7D00965FD2 /* WelcomeViewController.swift in Sources */,
+				3B257DEB227047E300C1A0BD /* SuperSecuredViewModel.swift in Sources */,
 				87C548FF21230E0E00965FD2 /* WelcomeScreenViewModel.swift in Sources */,
 				87C548AF2122B83100965FD2 /* AppDelegate.swift in Sources */,
 				87C548EC2122CA8D00965FD2 /* ActionViewModel.swift in Sources */,
 				87C548E32122CA1900965FD2 /* UIButton.swift in Sources */,
+				3B257DF02270488E00C1A0BD /* UI+Utils.swift in Sources */,
+				3B257DED2270480B00C1A0BD /* SuperSecuredViewController.swift in Sources */,
 				87C71C6F2124628E00C5FEBF /* PresentedValue.swift in Sources */,
+				3B257DF722704C3500C1A0BD /* AuthorizationEndpoint.swift in Sources */,
 				87C548EF2122CA9E00965FD2 /* EmailFieldView.swift in Sources */,
 				87C71C72212468B100C5FEBF /* Observable+TestUtils.swift in Sources */,
 				87C71C6D2124627A00C5FEBF /* TestView.swift in Sources */,
+				3B257DFE2270511000C1A0BD /* Retryable.swift in Sources */,
+				3B257DF22270490900C1A0BD /* Alert.swift in Sources */,
 				87C548E52122CA1900965FD2 /* UITextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -5,9 +5,9 @@ import RxCocoa
 extension UIButton {
     
     var simpleActionPresenter: Presenter<() -> Void> {
-        return Presenter.UI { [weak self] (action) -> Disposable in
+        return Presenter.UI { [weak self] (action) -> Disposable? in
             guard let someSelf = self else {
-                return Disposables.create()
+                return nil
             }
             
             return someSelf.rx.tap.subscribe { (event) in
@@ -17,14 +17,14 @@ extension UIButton {
     }
     
     var actionViewModelPresenter: Presenter<AnyPresentable<ActionViewModelPresenters>> {
-        return Presenter.UI { [weak self] (presentable) -> Disposable in
+        return Presenter.UI { [weak self] (presentable) -> Disposable? in
             guard let someSelf = self else {
-                return Disposables.create()
+                return nil
             }
             
             return presentable.present(ActionViewModelPresenters(
                 simpleAction: someSelf.simpleActionPresenter,
-                executing: Presenter.UI { _ in Disposables.create() },
+                executing: Presenter.UI { _ in nil },
                 enabled: someSelf.enabledPresenter
                 )
             )
@@ -34,14 +34,14 @@ extension UIButton {
     var titlePresenter: Presenter<String> {
         return Presenter.UI { [weak self] in
             self?.setTitle($0, for: .normal)
-            return Disposables.create()
+            return nil
         }
     }
     
     var enabledPresenter: Presenter<Bool> {
         return Presenter.UI { [weak self] in
             self?.isEnabled = $0
-            return Disposables.create()
+            return nil
         }
     }
     

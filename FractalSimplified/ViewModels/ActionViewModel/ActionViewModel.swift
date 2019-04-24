@@ -39,17 +39,20 @@ final class ActionViewModel {
 
 extension ActionViewModel: Presentable {
     
-    var present: (ActionViewModelPresenters) -> Disposable {
+    var present: (ActionViewModelPresenters) -> Disposable? {
         return { [weak self] presenters in
             guard let someSelf = self else {
-                return Disposables.create()
+                return nil
             }
             
-            let actionDisposable = presenters.simpleAction.present(someSelf.simpleAction)
-            let executingDisposable = presenters.executing.present(someSelf.executing)
-            let enabledDisposable = presenters.enabled.present(someSelf.enabled)
+            let disposables = [
+                presenters.simpleAction.present(someSelf.simpleAction),
+                presenters.executing.present(someSelf.executing),
+                presenters.enabled.present(someSelf.enabled)
+            ]
+                .compactMap { $0 }
             
-            return CompositeDisposable(actionDisposable, executingDisposable, enabledDisposable)
+            return CompositeDisposable(disposables: disposables)
         }
     }
     

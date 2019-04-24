@@ -44,7 +44,7 @@ final class SignUpViewController: UIViewController {
         NSLayoutConstraint.activate([
             self.backButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16),
             self.backButton.trailingAnchor.constraint(lessThanOrEqualTo: self.view.trailingAnchor, constant: -16),
-            self.backButton.topAnchor.constraint(equalTo: self.topLayoutGuide.topAnchor, constant: 16),
+            self.backButton.topAnchor.constraint(equalTo: self.topLayoutGuide.topAnchor, constant: 32),
             container.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16),
             container.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16),
             container.topAnchor.constraint(equalTo: self.backButton.bottomAnchor, constant: 16)
@@ -92,7 +92,7 @@ extension SignUpViewController {
     var presenter: Presenter<AnyPresentable<SignUpScreenPresenters>> {
         return Presenter.UI { [weak self] presentable in
             guard let someSelf = self else {
-                return Disposables.create()
+                return nil
             }
             return presentable.present(SignUpScreenPresenters(
                 title: someSelf.titleLabel.textPresenter,

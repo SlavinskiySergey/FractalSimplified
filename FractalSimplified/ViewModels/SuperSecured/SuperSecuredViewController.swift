@@ -1,0 +1,155 @@
+//
+//  SuperSecuredViewController.swift
+//  FractalSimplified
+//
+//  Created by Siarhei Slavinski on 4/24/19.
+//  Copyright © 2019 Sergey Slavinskiy. All rights reserved.
+//
+
+import UIKit
+import RxSwift
+
+enum SuperSecuredScreenChildAnyPresentable {
+    case content(SuperSecuredData)
+    case alert(Alert)
+    case error(String)
+    case loading
+}
+
+struct SuperSecuredScreenPresenters {
+    
+    let child: Presenter<SuperSecuredScreenChildAnyPresentable>
+    
+    init(child: Presenter<SuperSecuredScreenChildAnyPresentable>) {
+        self.child = child
+    }
+}
+
+final class SuperSecuredViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.title = "Super secured screen"
+        self.view.backgroundColor = .white
+        
+        self.view.addSubview(self.loadingView)
+        self.loadingView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(self.contentLabel)
+        self.contentLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            self.loadingView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            self.loadingView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
+            ])
+        
+        NSLayoutConstraint.activate([
+            self.contentLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            self.contentLabel.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            self.contentLabel.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.8)
+            ])
+    }
+    
+    private let contentLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.font = .boldSystemFont(ofSize: 30)
+        return label
+    }()
+    
+    private let loadingView: UIActivityIndicatorView = {
+        let view = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        view.color = .primary
+        return view
+    }()
+}
+
+extension SuperSecuredViewController {
+    
+    var presenter: Presenter<AnyPresentable<SuperSecuredScreenPresenters>> {
+        return Presenter.UI { [weak self] presentable in
+            guard let someSelf = self else {
+                return nil
+            }
+            return presentable.present(
+                SuperSecuredScreenPresenters(
+                    child: someSelf.childPresenter
+                )
+            )
+        }
+    }
+    
+    private var childPresenter: Presenter<SuperSecuredScreenChildAnyPresentable> {
+        return Presenter.UI { [weak self] presentable in
+            guard let someSelf = self else {
+                return nil
+            }
+            switch presentable {
+            case let .alert(alert):
+                return someSelf.alertPresenter.present(alert)
+            case let .content(biography):
+                someSelf.loadingView.isHidden = true
+                someSelf.contentLabel.textColor = .primary
+                return someSelf.contentLabel.textPresenter.present(biography)
+            case .loading:
+                someSelf.loadingView.startAnimating()
+                someSelf.loadingView.isHidden = false
+                return nil
+            case let .error(text):
+                someSelf.loadingView.isHidden = true
+                someSelf.contentLabel.textColor = .error
+                return someSelf.contentLabel.textPresenter.present(text)
+            }
+        }
+    }
+    
+    private var alertPresenter: Presenter<Alert> {
+        return Presenter.UI { [weak self] presentable in
+            guard let someSelf = self else {
+                return nil
+            }
+            someSelf.dismissAlert()
+            someSelf.present(alert: presentable)
+            return nil
+        }
+    }
+}
+
+private extension SuperSecuredViewController {
+    
+    func present(alert: Alert) {
+        let alertController = UIAlertController(title: alert.content.title, message: alert.content.text, preferredStyle: .alert)
+        if let primary = alert.actions.primary {
+            alertController.addAction(UIAlertAction(primary))
+        }
+        if let cancel = alert.actions.cancel {
+            alertController.addAction(UIAlertAction(cancel))
+        }
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func dismissAlert() {
+        self.presentedViewController?.dismiss(animated: true, completion: nil)
+    }
+}
+
+private extension UIAlertAction {
+    
+    convenience init(_ alertAction: AlertAction) {
+        self.init(title: alertAction.title, style: alertAction.style.uiStyle, handler: { _ in
+            _ = alertAction.action.execute().subscribe()
+        })
+    }
+}
+
+private extension AlertActionStyle {
+    
+    var uiStyle: UIAlertAction.Style {
+        switch self {
+        case .destructive: return .destructive
+        case .highlighted: return .default
+        case .normal: return .default
+        }
+    }
+}
+

@@ -9,9 +9,9 @@ struct EmailFieldPresenters {
 extension UITextField {
     
     var emailPresenter: Presenter<AnyPresentable<EmailFieldPresenters>> {
-        return Presenter.UI { [weak self] (presentable) -> Disposable in
+        return Presenter.UI { [weak self] (presentable) -> Disposable? in
             guard let someSelf = self else {
-                return Disposables.create()
+                return nil
             }
             
             return presentable.present(EmailFieldPresenters(

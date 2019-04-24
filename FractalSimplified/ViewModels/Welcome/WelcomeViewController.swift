@@ -58,7 +58,7 @@ extension WelcomeViewController {
     var presenter: Presenter<AnyPresentable<WelcomeScreenPresenters>> {
         return Presenter.UI { [weak self] presentable in
             guard let someSelf = self else {
-                return Disposables.create()
+                return nil
             }
             return presentable.present(WelcomeScreenPresenters(
                 title: someSelf.titleLabel.textPresenter,
@@ -74,18 +74,23 @@ extension UIViewController {
     var signUpScreenPresenter: Presenter<AnyPresentable<SignUpScreenPresenters>?> {
         return Presenter.UI { [weak self] presentable in
             guard let someSelf = self else {
-                return Disposables.create()
+                return nil
             }
             switch presentable {
             case let .some(presentable):
                 let vc = SignUpViewController.create()
-                let signUpDisposable = vc.presenter.present(presentable)
-                let dismissDisposable = Disposables
-                    .create(with: { someSelf.dismiss(animated: true, completion: nil) })
+                
+                let disposables = [
+                    vc.presenter.present(presentable),
+                    Disposables.create(with: { someSelf.dismiss(animated: true, completion: nil) })
+                    ]
+                    .compactMap { $0 }
+                
                 someSelf.present(vc, animated: true, completion: nil)
-                return CompositeDisposable(signUpDisposable, dismissDisposable)
+                
+                return CompositeDisposable(disposables: disposables)
             case .none:
-                return Disposables.create()
+                return nil
             }
         }
     }

@@ -37,16 +37,19 @@ final class EmailFieldViewModel {
 
 extension EmailFieldViewModel: Presentable {
     
-    var present: (EmailFieldPresenters) -> Disposable {
+    var present: (EmailFieldPresenters) -> Disposable? {
         return { [weak self] presenters in
             guard let someSelf = self else {
-                return Disposables.create()
+                return nil
             }
             
-            let placeholderDisposable = presenters.placeholder.present(someSelf.placeholder)
-            let sinkDisposable = presenters.sink.present(someSelf.emailSink)
+            let disposables = [
+                presenters.placeholder.present(someSelf.placeholder),
+                presenters.sink.present(someSelf.emailSink)
+                ]
+                .compactMap { $0 }
             
-            return CompositeDisposable(placeholderDisposable, sinkDisposable)
+            return CompositeDisposable(disposables: disposables)
         }
     }
     

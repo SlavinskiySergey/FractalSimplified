@@ -4,16 +4,16 @@ import RxSwift
 extension UILabel {
     
     var textPresenter: Presenter<String> {
-        return Presenter.UI { [weak self] (value) -> Disposable in
+        return Presenter.UI { [weak self] (value) -> Disposable? in
             self?.text = value
-            return Disposables.create()
+            return nil
         }
     }
     
     var optionalTextPresenter: Presenter<String?> {
-        return Presenter.UI { [weak self] (value) -> Disposable in
+        return Presenter.UI { [weak self] (value) -> Disposable? in
             self?.text = value
-            return Disposables.create()
+            return nil
         }
     }
     

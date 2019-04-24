@@ -34,18 +34,21 @@ final class WelcomeScreenViewModel {
 
 extension WelcomeScreenViewModel: Presentable {
     
-    var present: (WelcomeScreenPresenters) -> Disposable {
+    var present: (WelcomeScreenPresenters) -> Disposable? {
         return { [weak self] presenters in
             guard let someSelf = self else {
-                return Disposables.create()
+                return nil
             }
             
-            let titleDisposable = presenters.title.present(someSelf.title)
-            let signUpTitleDisposable = presenters.signUpTitle.present(someSelf.signUpTitle)
-            let signUpActionDisposable = presenters.signUpAction.present(someSelf.signUpAction)
-            let signUpScreenDisposable = presenters.signUpScreen.present(someSelf.signUpViewModel.asObservable().map { $0.map(AnyPresentable.init) })
+            let disposables = [
+                presenters.title.present(someSelf.title),
+                presenters.signUpTitle.present(someSelf.signUpTitle),
+                presenters.signUpAction.present(someSelf.signUpAction),
+                presenters.signUpScreen.present(someSelf.signUpViewModel.asObservable().map { $0.map(AnyPresentable.init) })
+                ]
+                .compactMap { $0 }
             
-            return CompositeDisposable(disposables: [titleDisposable, signUpTitleDisposable, signUpActionDisposable, signUpScreenDisposable])
+            return CompositeDisposable(disposables: disposables)
         }
     }
 }
