@@ -23,31 +23,28 @@ final class SuperSecuredScreen {
         let biographyAction = Action<Token, SuperSecuredData> {
             return biographyEndpoint.apply($0)
         }
-        
-        let enabledIf = authorizationAction.enabled
-            .flatMapLatest { authorizationEnabled -> Observable<Bool> in
-                switch authorizationEnabled {
-                case false:
-                    return BehaviorSubject<Bool>(value: authorizationEnabled)
-                case true:
-                    return biographyAction.enabled
-                }
-            }
+                
+        let enabledIf = Observable.combineLatest(authorizationAction.enabled,
+                                                 biographyAction.enabled)
+            .map { $0 && $1 }
             .distinctUntilChanged()
         
         let action = Action<Void, SuperSecuredData>(enabledIf: enabledIf) { _ -> Observable<SuperSecuredData> in
-            authorizationAction.execute()
+            authorizationAction.execute(())
+                .expectedToBeEnabled()
                 .flatMapLatest { token -> Observable<SuperSecuredData> in
-                    biographyAction.execute(token)
+                    biographyAction.execute(token).expectedToBeEnabled()
                 }
             }
     
-        let retryableAction = RetryableAction(original: action)
+        self.retryableAction = RetryableAction(original: action)
     
         let state = retryableAction.makeOneShotStateStream(input: ())
         self.child = state.map(SuperSecuredScreenChild.init)
     }
-
+    
+    private let retryableAction: RetryableAction<Void, SuperSecuredData>
+    
     private let child: Observable<SuperSecuredScreenChild>
 }
 

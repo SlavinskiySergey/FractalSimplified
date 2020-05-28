@@ -31,21 +31,57 @@ extension ObservableType {
         return self.catchError { _ in .empty() }
     }
     
-    func filterNil<Type>() -> Observable<Type> where E == Optional<Type> {
-        return flatMap { Observable.from(optional: $0) }
+    func expectedToBeEnabled() -> Observable<E> {
+        return self.catchError { error in
+            guard let actionError = error as? ActionError else {
+                return Observable.error(error)
+            }
+            
+            switch actionError {
+            case .notEnabled:
+                assertionFailure()
+                return .empty()
+            case .underlyingError(let e):
+                return Observable.error(e)
+            }
+        }
+    }
+}
+
+protocol OptionalType {
+    associatedtype Wrapped
+    
+    var optional: Wrapped? { get }
+}
+
+extension Optional: OptionalType {
+    public var optional: Wrapped? {
+        return self
+    }
+}
+
+extension ObservableType where E: OptionalType {
+    
+    func filterNil() -> Observable<E.Wrapped> {
+        return flatMap { Observable.from(optional: $0.optional) }
+    }
+    
+    func skipNilRepeats() -> Observable<Self.E> {
+        return self.distinctUntilChanged { $0.optional == nil && $1.optional == nil }
     }
 }
 
 func nilCoalescingFlatMap<T>(_ observables: [Observable<T?>]) -> Observable<T?> {
-    guard let first = observables.first else { return BehaviorSubject(value: nil) }
-    
+    guard let first = observables.first else {
+        return Observable.just(nil)
+    }
     
     return first
-        .filterNil()
+        .skipNilRepeats()
         .flatMapLatest { (value: T?) -> Observable<T?> in
             switch value {
             case let some?:
-                return BehaviorSubject(value: some).map(Optional.init)
+                return Observable.just(some).map(Optional.init)
             case nil:
                 return nilCoalescingFlatMap(Array(observables.suffix(from: 1)))
             }

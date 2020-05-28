@@ -7,6 +7,7 @@ final class WelcomeScreenViewModel {
     init() {
         self.title = "Welcome"
         self.signUpTitle = "Sign Up"
+        self.securedTitle = "Super Secured"
         
         let showSignUp = Action<Void, Void>.echo()
         self.signUpAction = ActionViewModel(action: showSignUp)
@@ -21,13 +22,26 @@ final class WelcomeScreenViewModel {
                     .startWith(viewModel)
             }
             .bind(to: self.signUpViewModel)
-            .disposed(by: self.disposeBag)        
+            .disposed(by: self.disposeBag)
+        
+        let showSecured = Action<Void, Void>.echo()
+        self.securedAction = ActionViewModel(action: showSecured)
+        
+        showSecured.elements
+            .flatMapLatest { _ -> Observable<SuperSecuredScreen> in
+                Observable.just(SuperSecuredScreen())
+            }
+            .bind(to: self.securedViewModel)
+            .disposed(by: self.disposeBag)
     }
     
     private let title: String
     private let signUpTitle: String
+    private let securedTitle: String
     private let signUpAction: ActionViewModel
+    private let securedAction: ActionViewModel
     private let signUpViewModel = BehaviorSubject<SignUpScreenViewModel?>(value: nil)
+    private let securedViewModel = BehaviorSubject<SuperSecuredScreen?>(value: nil)
     
     private let disposeBag = DisposeBag()
 }
@@ -44,7 +58,10 @@ extension WelcomeScreenViewModel: Presentable {
                 presenters.title.present(someSelf.title),
                 presenters.signUpTitle.present(someSelf.signUpTitle),
                 presenters.signUpAction.present(someSelf.signUpAction),
-                presenters.signUpScreen.present(someSelf.signUpViewModel.asObservable().map { $0.map(AnyPresentable.init) })
+                presenters.signUpScreen.present(someSelf.signUpViewModel.asObservable().map { $0.map(AnyPresentable.init) }),
+                presenters.securedTitle.present(someSelf.securedTitle),
+                presenters.securedAction.present(someSelf.securedAction),
+                presenters.securedScreen.present(someSelf.securedViewModel.asObservable().map { $0.map(AnyPresentable.init) })
                 ]
                 .compactMap { $0 }
             

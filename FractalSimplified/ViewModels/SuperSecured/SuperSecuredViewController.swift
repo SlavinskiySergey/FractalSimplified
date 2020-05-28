@@ -27,6 +27,12 @@ struct SuperSecuredScreenPresenters {
 
 final class SuperSecuredViewController: UIViewController {
     
+    static func create() -> SuperSecuredViewController {
+        let vc = SuperSecuredViewController()
+        vc.loadViewIfNeeded()
+        return vc
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Super secured screen"

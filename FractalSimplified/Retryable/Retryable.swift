@@ -24,11 +24,12 @@ struct RetryableAction<Input, Element> {
     
     init(original: Action<Input, Element>) {
         
-        let retryable = original.retryable()
+        let (action, retryable) = original.retryable()
         
-        self.action = retryable.action
-        
-        retryable.retryable
+        self.action = action
+                
+        retryable
+            .skipNilRepeats()
             .bind(to: error)
             .disposed(by: bag)
     }
@@ -36,14 +37,17 @@ struct RetryableAction<Input, Element> {
 
 extension Action {
     
-    func retryable() -> (action: Action<Input, Element>, retryable: Observable<Retryable>) {
+    func retryable() -> (action: Action<Input, Element>, retryable: Observable<Retryable?>) {
         
         let inner = Action<Input, RetryableNext<Element>>(enabledIf: self.enabled) {
-            return self.execute($0).retryable()
+            return self.execute($0)
+                .expectedToBeEnabled()
+                .retryable()
         }
         
         let action = Action<Input, Element>(enabledIf: inner.enabled) {
             return inner.execute($0)
+                .expectedToBeEnabled()
                 .materialize()
                 .concatMap { (event) -> Observable<Element> in
                     switch event {
@@ -57,10 +61,11 @@ extension Action {
             }
         }
         
-        let retryable = inner.elements
+        let retryable = inner
+            .elements
             .map { $0.error }
-            .filterNil()
-        
+            .skipNilRepeats()
+                
         return (action, retryable)
     }
 }
@@ -128,12 +133,12 @@ private extension ObservableType {
                     )
                     processedErrorsStream
                         .onNext(RetryableObservable.just(retryableError)
-                            .concat(queueStream.asObservable().take(1)))
+                            .concat(queueStream.take(1)))
                 })
                 .completeOnError()
             
             let mergeDisposable = Observable<RetryableNext<E>>.merge([
-                processedErrorsStream.flatMapLatest { return $0 },
+                processedErrorsStream.switchLatest(),
                 valuesStream.map(RetryableNext<E>.some)
                 ])
                 .subscribe(observer)
@@ -162,11 +167,14 @@ extension RetryableAction {
     func makeOneShotStateStream(input: Input) -> Observable<LoadingState<Element>> {
         let error: Observable<LoadingState<Element>?> = self.error.map { $0.map(LoadingState.error) }
         
-         let loading: Observable<LoadingState<Element>?> = self.action.executing.map { $0 ? .loading : nil }
+        let loading: Observable<LoadingState<Element>?> = self.action.executing.map { $0 ? .loading : nil }
         
         let content: Observable<LoadingState<Element>?> = self.action.execute(input)
+            .expectedToBeEnabled()
             .map(LoadingState.loaded)
-            .catchError { Observable.just(($0 as? APIError).map(LoadingState.ignored)) }
+            .catchError {
+                Observable.just(($0 as? APIError).map(LoadingState.ignored))
+            }
             .startWith(nil)
         
         return nilCoalescingFlatMap(error, loading, content)

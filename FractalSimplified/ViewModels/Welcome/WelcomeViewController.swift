@@ -6,6 +6,10 @@ struct WelcomeScreenPresenters {
     let signUpTitle: Presenter<String>
     let signUpAction: Presenter<AnyPresentable<ActionViewModelPresenters>>
     let signUpScreen: Presenter<AnyPresentable<SignUpScreenPresenters>?>
+    let securedTitle: Presenter<String>
+    let securedAction: Presenter<AnyPresentable<ActionViewModelPresenters>>
+    let securedScreen: Presenter<AnyPresentable<SuperSecuredScreenPresenters>?>
+
 }
 
 final class WelcomeViewController: UIViewController {
@@ -19,7 +23,7 @@ final class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
-        [self.titleLabel, self.signUpButton].forEach {
+        [self.titleLabel, self.signUpButton, self.securedButton].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             self.view.addSubview($0)
         }
@@ -29,7 +33,10 @@ final class WelcomeViewController: UIViewController {
             self.titleLabel.leadingAnchor.constraint(greaterThanOrEqualTo: self.view.leadingAnchor, constant: 16),
             self.signUpButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             self.signUpButton.leadingAnchor.constraint(greaterThanOrEqualTo: self.view.leadingAnchor, constant: 16),
-            self.signUpButton.bottomAnchor.constraint(equalTo: self.bottomLayoutGuide.bottomAnchor, constant: -36)
+            self.signUpButton.bottomAnchor.constraint(equalTo: self.bottomLayoutGuide.bottomAnchor, constant: -36),
+            self.securedButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            self.securedButton.leadingAnchor.constraint(greaterThanOrEqualTo: self.view.leadingAnchor, constant: 16),
+            self.securedButton.bottomAnchor.constraint(equalTo: self.signUpButton.bottomAnchor, constant: -72)
             ])
     }
     
@@ -39,6 +46,11 @@ final class WelcomeViewController: UIViewController {
         return label
     }()
     fileprivate let signUpButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.titleLabel?.font = .preferredFont(forTextStyle: .title2)
+        return button
+    }()
+    fileprivate let securedButton: UIButton = {
         let button = UIButton(type: .system)
         button.titleLabel?.font = .preferredFont(forTextStyle: .title2)
         return button
@@ -64,7 +76,10 @@ extension WelcomeViewController {
                 title: someSelf.titleLabel.textPresenter,
                 signUpTitle: someSelf.signUpButton.titlePresenter,
                 signUpAction: someSelf.signUpButton.actionViewModelPresenter,
-                signUpScreen: someSelf.signUpScreenPresenter
+                signUpScreen: someSelf.signUpScreenPresenter,
+                securedTitle: someSelf.securedButton.titlePresenter,
+                securedAction: someSelf.securedButton.actionViewModelPresenter,
+                securedScreen: someSelf.superSecuredScreenPresenter
             ))
         }
     }
@@ -92,6 +107,32 @@ extension UIViewController {
             case .none:
                 return nil
             }
+        }
+    }
+    
+    var superSecuredScreenPresenter: Presenter<AnyPresentable<SuperSecuredScreenPresenters>?> {
+        return Presenter.UI { [weak self] presentable in
+            guard let someSelf = self else {
+                return nil
+            }
+            
+            switch presentable {
+            case let .some(presentable):
+                let vc = SuperSecuredViewController.create()
+                
+                let disposables = [
+                    vc.presenter.present(presentable),
+                    Disposables.create(with: { someSelf.dismiss(animated: true, completion: nil) })
+                    ]
+                    .compactMap { $0 }
+                
+                someSelf.present(vc, animated: false, completion: nil)
+                
+                return CompositeDisposable(disposables: disposables)
+            case .none:
+                return nil
+            }
+
         }
     }
 }
